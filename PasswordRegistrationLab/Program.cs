@@ -110,7 +110,7 @@ namespace PasswordRegistrationLab
             }
             if (username.Length < 7 || username.Length > 12)
             {
-                Console.WriteLine("Error, password must be between 7-12 characters long");
+                Console.WriteLine("Error, username must be between 7-12 characters long");
                 valid = false;
             }
             if (stringContains(username, restrictedWords)) 
@@ -118,6 +118,11 @@ namespace PasswordRegistrationLab
                 Console.WriteLine("Error, username contains restricted word");
                 valid = false;
             }    
+            if (letterCount < 5)
+            {
+                Console.WriteLine("Error, username must contain at least 5 letters");
+                valid = false;
+            }
             return valid;
         }
         public static bool ContinueYesNo ()
